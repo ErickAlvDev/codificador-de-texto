@@ -4,17 +4,114 @@
 :root {
   --cor-preto: #000000;
   --cor-branco: #dfe0e9;
-  --cor-terciaria: #8f0000;
+  --cor-terciaria: #0a3871;
   --cor-hover: #272727;
 
   --fonte-primaria: "Krona One", sans-serif;
   --fonte-secundaria: "Montserrat", sans-serif;
 }
 
-body {
-  box-sizing: border-box;
+* {
   background-color: var(--cor-branco);
   color: var(--cor-preto);
+  font-family: var(--fonte-primaria);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 150%;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  margin-bottom: 50px;
+  margin-left: 80px;
+}
+
+.text-area {
+  border: none;
+  color: var(--cor-terciaria);
+  margin-top: 98px;
+  text-transform: lowercase;
+}
+
+::placeholder {
+  color: var(--cor-terciaria);
+}
+.text-area:focus {
+  outline: none;
+}
+
+.mensagem {
+  background-color: #f6f6f6;
+  background-image: url(/assets/boneco.png);
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 24px;
+  color: var(--cor-terciaria);
+  margin-left: 98px;
+  margin-top: 20px;
+  padding-left: 20px;
+  position: fixed;
+  height: 50%;
+}
+
+.mensagem:focus {
+  outline: none;
+}
+
+.informacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-left: 32px;
+}
+.informacao-texto {
+  color: var(--cor-hover);
+  font-size: 18px;
+}
+.botoes {
+  display: flex;
+  margin-top: 18px;
+}
+
+.btn-encriptar {
+  background-color: var(--cor-terciaria);
+  border: 1px solid var(--cor-terciaria);
+  border-radius: 24px;
+  color: var(--cor-branco);
+  cursor: pointer;
+  height: 67px;
+  width: 328px;
+}
+
+.btn-desencriptar {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-terciaria);
+  border-radius: 24px;
+  color: var(--cor-terciaria);
+  cursor: pointer;
+  height: 67px;
+  margin-left: 30px;
+  width: 328px;
+}
+
+.btn-copiar {
+  border: 1px solid var(--cor-terciaria);
+  border-radius: 24px;
+  color: var(--cor-terciaria);
+  cursor: pointer;
+  height: 67px;
+  margin-left: 188px;
+  margin-top: 420px;
+  position: absolute;
+  width: 328px;
 }
 
 .rodape {
@@ -23,6 +120,6 @@ body {
   padding: 24px;
   text-align: center;
   font-family: var(--fonte-secundaria);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
 }

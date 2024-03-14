@@ -7,24 +7,40 @@
     <title>Codificador de Texto</title>
   </head>
   <body>
-    <header></header>
-    <main>
+    <header class="cabecalho">
+      <img class="logo-alura" src="assets/logo-alura.png" alt="Logo da Alura" />
+      <h1>CODIFICADOR DE TEXTO</h1>
+    </header>
+    <main class="apresentacao">
       <section>
-        <h1>DECODIFICADOR DE TEXTO</
-          <h2>Digite seu texto</h2>
-          <p></p>
-        <div>
-          <h5>Apenas letras maiusculas e sem acento.</h5>
-          <a href="">Criptografar</a>
-          <a href="">Descriptografar</a>
+        <textarea
+          class="text-area"
+          cols="41"
+          rows="4"
+          placeholder="Digite seu texto  aqui..."
+        ></textarea>
+        <div class="informacao">
+          <img
+            class="informacao-imagem"
+            src="assets/exclamação.png"
+            alt="Exclamacao"
+          />
+          <h6 class="informacao-texto">
+            Apenas letras maiusculas e sem acento.
+          </h6>
+        </div>
+
+        <div class="botoes">
+          <button class="btn-encriptar">Criptografar</button>
+          <button class="btn-desencriptar">Descriptografar</button>
         </div>
       </section>
-      <div>
-        <img src="" alt="">
-        <h2>Nenhuma mensagem encontrada</h2>
-        <p>Digite um texto que você deseja criptografar ou descriptografar</p>
-        <a href="">Copiar</a>
-      </div>
+      <section>
+        <div>
+          <textarea class="mensagem" cols="20" rows="10"></textarea>
+          <button class="btn-copiar">Copiar</button>
+        </div>
+      </section>
     </main>
     <footer class="rodape">Desenvolvido por Erick Alvarado</footer>
   </body>
