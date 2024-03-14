@@ -1,31 +1,47 @@
 const texto = document.querySelector(".text-area");
 const mensagem = document.querySelector(".mensagem");
-
-// As "chaves" de criptografia que utilizaremos são:
-// A letra "e" é convertida para "enter"
-// A letra "i" é convertida para "imes"
-// A letra "a" é convertida para "ai"
-// A letra "o" é convertida para "ober"
-// A letra "u" é convertida para "ufat"
+const vogais = ["a", "e", "i", "o", "u"];
+const chaves = ["ai", "enter", "imes", "ober", "ufat"];
 
 function encriptar(texto) {
-  for (const letra of texto) {
-    if (letra === "a") {
-      letra = "ai";
-    }
-    if (letra === "e") {
-      letra = "enter";
-    }
-    if (letra === "i") {
-      letra = "imes";
-    }
-    if (letra === "o") {
-      letra = "ober";
-    }
-    if (letra === "u") {
-      letra = "ufat";
+  textoEnMinusculas = texto.toLowerCase();
+  for (let i = 0; i < vogais.length; i++) {
+    if (textoEnMinusculas.includes(vogais[i])) {
+      textoEnMinusculas = textoEnMinusculas.replaceAll(vogais[i], chaves[i]);
     }
   }
+  return textoEnMinusculas;
+}
 
-  return texto;
+function btnEncriptar() {
+  const textoParaEncriptar = encriptar(texto.value);
+  mensagem.value = textoParaEncriptar;
+  document.getElementById("encriptado").style.backgroundImage = "none";
+  texto.value = "";
+}
+
+function desencriptar(texto) {
+  textoEnMinusculas = texto.toLowerCase();
+  for (let i = 0; i < chaves.length; i++) {
+    if (textoEnMinusculas.includes(chaves[i])) {
+      textoEnMinusculas = textoEnMinusculas.replaceAll(chaves[i], vogais[i]);
+    }
+  }
+  return textoEnMinusculas;
+}
+
+function btnDesencriptar() {
+  const textoParaDesencriptar = desencriptar(texto.value);
+  mensagem.value = textoParaDesencriptar;
+  document.getElementById("encriptado").style.backgroundImage = "none";
+  texto.value = "";
+}
+
+function btnCopiar() {
+  navigator.clipboard.writeText(mensagem.value).then(() => {
+    alert("Copiado para a Área de transferência");
+    mensagem.value = "";
+    document.getElementById("encriptado").style.backgroundImage =
+      "url(/assets/boneco.png)";
+  });
 }
